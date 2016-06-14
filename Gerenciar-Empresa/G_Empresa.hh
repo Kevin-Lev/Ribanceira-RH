@@ -14,34 +14,28 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#ifndef RIBANCEIRA_G_EMPRESA_HH
+#define RIBANCEIRA_G_EMPRESA_HH
+
 #include "Empresa.hh"
+
+#include <vector>
 
 using namespace std;
 
-TipoEmpresa::TipoEmpresa(void)
+class G_Empresa
 {
-   if (tipos.size() == 0) {
-      // TODO pegar os tipos cadastrados no BD e inserir no vetor
-      
-   }
-}
+public:
+   G_Empresa(const vector<string>& dadosBD);
 
-void TipoEmpresa::adicionarTipo(string tipo)
-{
-   if (tipos.insert(tipo).second) {
-      // TODO inserir tipo no BD
-      
-   }
-}
+   void criarEmpresa(const Empresa& empresa);
+   void alterarEmpresa(const Empresa& empresa);
+   Empresa selecionarEmpresa(const string& nome);
+   bool removerEmpresa(int cod);
 
-void TipoEmpresa::removerTipo(string tipo)
-{
-   int tamanhoAnterior = tipos.size();
-   tipos.erase(tipo);
-   if (tipos.size() < tamanhoAnterior) {
-      // TODO remover item do BD
+private:
+   vector<string> dadosBD;
 
-   }
-}
+};
 
-
+#endif //RIBANCEIRA_G_EMPRESA_HH

@@ -17,32 +17,11 @@
 #ifndef RIBANCEIRA_EMPRESA_HH
 #define RIBANCEIRA_EMPRESA_HH
 
-#include <set>
 #include <string>
 
 using namespace std;
 
 class G_Empresa; //forward declaration
-
-class TipoEmpresa
-{
-   friend class G_Empresa;
-
-public:
-   TipoEmpresa(void);
-   
-   string setTipo(string tipo) { this->tipoEmpresa = tipo; }
-   string getTipo(void) { return tipoEmpresa; }
-   
-private:
-   void adicionarTipo(string tipo);
-   void removerTipo(string tipo);
-
-   static set<string> tipos;
-   string tipoEmpresa;
-};
-
-
 
 class Empresa
 {
@@ -57,8 +36,8 @@ public:
    string getEndereco(void) { return endereco; }
    string getTelefone(void) { return telefone; }
    string getEmail(void) { return email; }
+   string getTipoEmpresa(void) { return tipoEmpresa; }
    bool getRegimeTributacao(void) { return regimeTributacao; }
-   string getTipoEmpresa(void) { return tipoEmpresa.getTipo(); }
    
 private:
    void setCnpj(int cnpj) { this->cnpj = cnpj; }
@@ -69,8 +48,8 @@ private:
    void setEndereco(string endereco) { this->endereco = endereco; }
    void setTelefone(string telefone) { this->telefone = telefone; }
    void setEmail(string email) { this->email = email; }
+   void setTipoEmpresa(string tipo) { this->tipoEmpresa = tipo; }
    void setRegimeTributacao(bool regime) { this->regimeTributacao = regime; }
-   void setTipoEmpresa(string tipo) { this->tipoEmpresa.setTipo(tipo); }
 
    int cnpj;
    int inscricaoEstadual;
@@ -80,8 +59,9 @@ private:
    string endereco;
    string telefone;
    string email;
+   string tipoEmpresa;
    bool regimeTributacao;
-   TipoEmpresa tipoEmpresa;
+
 };
 
 #endif //RIBANCEIRA_EMPRESA_HH
