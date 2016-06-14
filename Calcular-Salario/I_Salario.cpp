@@ -1,3 +1,5 @@
+//Desenvolvido por Christian Takashi Nakata
+
 #include "I_Salario.hh"
 
 #include <iostream>
