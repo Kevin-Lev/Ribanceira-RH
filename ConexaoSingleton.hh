@@ -28,7 +28,7 @@ public:
    static ConexaoSingleton& instancia(void);
    void executar(string query);
    void conectar(vector<string> dadosConexao);
-   int i;
+   
 private:
    ConexaoSingleton() {};
    ConexaoSingleton(ConexaoSingleton const&); // Nao implementa para evitar uso indevido

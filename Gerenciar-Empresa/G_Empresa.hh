@@ -18,6 +18,7 @@
 #define RIBANCEIRA_G_EMPRESA_HH
 
 #include "Empresa.hh"
+#include "ConexaoSingleton.hh"
 
 #include <vector>
 
@@ -26,16 +27,16 @@ using namespace std;
 class G_Empresa
 {
 public:
-   G_Empresa(const vector<string>& dadosBD);
+   G_Empresa(const vector<string>& dadosBD, const Empresa& empresa);
 
    void criarEmpresa(const Empresa& empresa);
    void alterarEmpresa(const Empresa& empresa);
    Empresa selecionarEmpresa(const string& nome);
-   bool removerEmpresa(int cod);
+   bool removerEmpresa(int cnpj);
 
 private:
-   vector<string> dadosBD;
-
+   ConexaoSingleton& conexao = ConexaoSingleton::instancia();
+   Empresa empresa;
 };
 
 #endif //RIBANCEIRA_G_EMPRESA_HH
