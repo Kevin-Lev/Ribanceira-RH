@@ -13,10 +13,10 @@
 #include <gtkmm/radiobutton.h>
 #include <gtkmm/window.h>
 
-class I_Socio : public Gtk::Window
+class I_ConvencaColetiva : public Gtk::Window
 {
   public:
-    I_Socio(void);
+    I_ConvencaColetiva(void);
       
   private:
     void on_btn_gravar_clicked(void);
@@ -26,8 +26,8 @@ class I_Socio : public Gtk::Window
     Gtk::VBox vbox_top, vbox_cadastros;
     Gtk::ButtonBox bbox;
                         
-    Gtk::Label lbl_papel, lbl_porcentagemLucro; 
-    Gtk::Entry txt_papel, txt_porcentagemLucro; 
+    Gtk::Label lbl_categoria, lbl_nomeSindicato, lbl_data; 
+    Gtk::Entry txt_categoria, txt_nomeSindicato, txt_data;    
     Gtk::Button btn_gravar, btn_sair;
 };
 
