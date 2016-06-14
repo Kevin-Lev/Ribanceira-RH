@@ -1,3 +1,5 @@
+//Desenvolvido por Christian Takashi Nakata
+
 #include "I_ConvencaoColetiva.hh"
 
 #include <iostream>
