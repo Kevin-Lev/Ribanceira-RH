@@ -1,3 +1,5 @@
+//Desenvolvido por Christian Takashi Nakata
+
 #ifndef RIBANCEIRA_I_EMPRESA_HH
 #define RIBANCEIRA_I_EMPRESA_HH
 
